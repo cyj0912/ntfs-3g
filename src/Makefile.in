@@ -959,7 +959,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-data-local install-man \
+install-data-am: install-man \
 	install-rootbinPROGRAMS install-rootsbinDATA
 
 install-dvi: install-dvi-am

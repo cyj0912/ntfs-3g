@@ -3417,9 +3417,13 @@ static struct fuse_operations ntfs_3g_ops = {
 #else
 	.utime		= ntfs_fuse_utime,
 #endif
+#ifndef __FreeBSD__
+ 	.bmap		= ntfs_fuse_bmap,
+#else
+	.bmap		= NULL,
+#endif
 	.fsync		= ntfs_fuse_fsync,
 	.fsyncdir	= ntfs_fuse_fsync,
-	.bmap		= ntfs_fuse_bmap,
 	.destroy        = ntfs_fuse_destroy2,
 #if defined(FUSE_INTERNAL) || (FUSE_VERSION >= 28)
         .ioctl		= ntfs_fuse_ioctl,

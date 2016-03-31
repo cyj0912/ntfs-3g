@@ -383,6 +383,7 @@ libntfs_3g_la_CFLAGS = $(AM_CFLAGS) -I$(top_srcdir)/include/ntfs-3g
 libntfs_3g_la_CPPFLAGS = $(AM_CPPFLAGS) $(LIBNTFS_CPPFLAGS)
 libntfs_3g_la_LIBADD = $(LIBNTFS_LIBS)
 libntfs_3g_la_LDFLAGS = -version-info $(LIBNTFS_3G_VERSION) -no-undefined
+libntfs_3g_la_LIBADD = -lublio
 libntfs_3g_la_SOURCES = acls.c attrib.c attrlist.c bitmap.c bootsect.c \
 	cache.c collate.c compat.c compress.c debug.c device.c dir.c \
 	ea.c efs.c index.c inode.c ioctl.c lcnalloc.c logfile.c \
