@@ -687,7 +687,7 @@ static s64 ntfs_device_unix_io_write(struct ntfs_device *dev, const void *buf,
 #if USE_ALIGNED_IO
 	return aligned_write(dev, buf, count);
 #elif USE_UBLIO
-	if (DEV_HANDLE(dev)->ublio_fh)
+    if (DEV_HANDLE(dev)->ublio_fh) {
 		off_t offset;
 		ssize_t res;
 
